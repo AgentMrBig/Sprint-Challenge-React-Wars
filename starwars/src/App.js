@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       starwarsChars: []
     };
@@ -22,6 +22,7 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
+        console.log(data.results);
         this.setState({ starwarsChars: data.results });
       })
       .catch(err => {
@@ -32,7 +33,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="Header">React Wars</h1>
+        <div className="panel">
+          <h1 className="Header">React Wars</h1>
+
+          <ul>
+            {this.state.starwarsChars.map((char, key) => (
+              <li className="listItem" key={key}>
+                <a href="#">{char.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
