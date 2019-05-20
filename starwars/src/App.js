@@ -39,7 +39,17 @@ class App extends Component {
           <ul>
             {this.state.starwarsChars.map((char, key) => (
               <li className="listItem" key={key}>
-                <a href="#">{char.name}</a>
+                <a href="#" className="idLink">
+                  <span id="name" className="idSpan">
+                    {char.name}
+                  </span>
+                  <span id="bd" className="idSpan">
+                    Born: {char.birth_year}
+                  </span>
+                  <span id="mf" className="idSpan">
+                    {char.gender}
+                  </span>
+                </a>
               </li>
             ))}
           </ul>
