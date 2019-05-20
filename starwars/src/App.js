@@ -34,21 +34,17 @@ class App extends Component {
     return (
       <div className="App">
         <div className="panel">
-          <h1 className="Header">React Wars</h1>
+          <h1 className="Header">&nbsp;</h1>
 
           <ul>
             {this.state.starwarsChars.map((char, key) => (
-              <li className="listItem" key={key}>
+              <li className="listItem btn" key={key}>
                 <a href="#" className="idLink">
-                  <span id="name" className="idSpan">
-                    {char.name}
-                  </span>
-                  <span id="bd" className="idSpan">
-                    Born: {char.birth_year}
-                  </span>
-                  <span id="mf" className="idSpan">
-                    {char.gender}
-                  </span>
+                  <div className="liCardHeader">
+                    <span id="name" className="idSpan">
+                      {char.name}
+                    </span>
+                  </div>
                 </a>
               </li>
             ))}
